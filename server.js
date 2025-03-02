@@ -1,18 +1,11 @@
-require("dotenv").config(); // Add this line at the very top
+require("dotenv").config(); // Load environment variables
 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-app.use(express
-
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-
-const app = express();
-app.use(express.json());
+app.use(express.json()); // ✅ Properly closed
 app.use(cors());
 
 // Connect to MongoDB
@@ -46,4 +39,5 @@ app.get("/submissions", async (req, res) => {
 });
 
 // Start Server
-app.listen(5000, () => console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
