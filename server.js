@@ -1,3 +1,12 @@
+require("dotenv").config(); // Add this line at the very top
+
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+const app = express();
+app.use(express
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
